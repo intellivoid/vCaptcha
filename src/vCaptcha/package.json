@@ -1,0 +1,25 @@
+{
+    "package": {
+        "package_name": "net.intellivoid.vcaptcha",
+        "name": "vCaptcha",
+        "version": "1.0.0.0",
+        "author": "Zi Xing Narrakas",
+        "organization": "Intellivoid Technologies",
+        "description": "A privacy focused simple solution for captchas",
+        "url": "https://github.com/intellivoid/vcaptcha",
+        "dependencies": [],
+        "configuration": {
+            "autoload_method": "generated_spl",
+            "main": null,
+            "post_installation": [],
+            "pre_installation": []
+        }
+    },
+    "components": [
+        {
+            "required": true,
+            "file": "vCaptcha.php"
+        }
+    ],
+    "files": []
+}
