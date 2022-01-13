@@ -38,7 +38,13 @@
         {
             "required": true,
             "file": "vCaptcha.php"
+        },
+        {
+            "required": true,
+            "file": "Managers/CaptchaInstanceManager.php"
         }
     ],
-    "files": []
+    "files": [
+        "package.json"
+    ]
 }

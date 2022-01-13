@@ -8,6 +8,7 @@
     use acm2\Exceptions\ConfigurationNotDefinedException;
     use acm2\Objects\Schema;
     use mysqli;
+    use vCaptcha\Managers\CaptchaInstanceManager;
 
     class vCaptcha
     {
@@ -25,6 +26,11 @@
          * @var mysqli|null
          */
         private $DatabaseConnection;
+
+        /**
+         * @var CaptchaInstanceManager
+         */
+        private $CaptchaInstanceManager;
 
         /**
          * @throws ConfigurationNotDefinedException
@@ -45,6 +51,7 @@
             $this->acm->updateConfiguration();
 
             $this->DatabaseConfiguration = $this->acm->getConfiguration('Database');
+            $this->CaptchaInstanceManager = new CaptchaInstanceManager($this);
         }
 
         /**
@@ -86,5 +93,13 @@
                 $this->DatabaseConfiguration['Name'],
                 $this->DatabaseConfiguration['Port']
             );
+        }
+
+        /**
+         * @return CaptchaInstanceManager
+         */
+        public function getCaptchaInstanceManager(): CaptchaInstanceManager
+        {
+            return $this->CaptchaInstanceManager;
         }
     }
