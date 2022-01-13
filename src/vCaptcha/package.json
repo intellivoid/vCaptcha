@@ -19,6 +19,12 @@
                 "version": "latest",
                 "source": "default@github/intellivoid/msqg",
                 "required": true
+            },
+            {
+                "package": "net.intellivoid.acm2",
+                "version": "latest",
+                "source": "default@github/intellivoid/acm2",
+                "required": true
             }
         ],
         "configuration": {
