@@ -7,7 +7,14 @@
         "organization": "Intellivoid Technologies",
         "description": "A privacy focused simple solution for captchas",
         "url": "https://github.com/intellivoid/vcaptcha",
-        "dependencies": [],
+        "dependencies": [
+            {
+                "package": "net.intellivoid.ziproto",
+                "version": "latest",
+                "source": "default@github/intellivoid/ZiProto",
+                "required": true
+            }
+        ],
         "configuration": {
             "autoload_method": "generated_spl",
             "main": null,
