@@ -25,6 +25,12 @@
                 "version": "latest",
                 "source": "default@github/intellivoid/acm2",
                 "required": true
+            },
+            {
+                "package": "com.symfony.uid",
+                "version": "latest",
+                "source": "symfony@composer/uid",
+                "required": true
             }
         ],
         "configuration": {
