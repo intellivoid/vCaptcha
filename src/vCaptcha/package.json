@@ -43,7 +43,23 @@
     "components": [
         {
             "required": true,
+            "file": "Abstracts/CountryFilterMode.php"
+        },
+        {
+            "required": true,
+            "file": "Abstracts/CaptchaType.php"
+        },
+        {
+            "required": true,
             "file": "vCaptcha.php"
+        },
+        {
+            "required": true,
+            "file": "Objects/CaptchaInstance.php"
+        },
+        {
+            "required": true,
+            "file": "Objects/CaptchaInstance/FirewallOptions.php"
         },
         {
             "required": true,
