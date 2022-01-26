@@ -51,7 +51,31 @@
         },
         {
             "required": true,
+            "file": "Classes/Validate.php"
+        },
+        {
+            "required": true,
+            "file": "Classes/Security.php"
+        },
+        {
+            "required": true,
             "file": "vCaptcha.php"
+        },
+        {
+            "required": true,
+            "file": "Exceptions/DatabaseException.php"
+        },
+        {
+            "required": true,
+            "file": "Exceptions/CaptchaInstanceNotFoundException.php"
+        },
+        {
+            "required": true,
+            "file": "Exceptions/InvalidCaptchaNameException.php"
+        },
+        {
+            "required": true,
+            "file": "Objects/SampleCaptchaInstance.php"
         },
         {
             "required": true,

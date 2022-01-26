@@ -24,6 +24,13 @@
         public $OwnerID;
 
         /**
+         * The name of the captcha instance
+         *
+         * @var string
+         */
+        public $Name;
+
+        /**
          * The secret key used for creating and validating
          *
          * @var string
@@ -104,7 +111,7 @@
                 $CaptchaInstanceObject->SecretKey = $data['secret_key'];
 
             if(isset($data['enabled']))
-                $CaptchaInstanceObject->Enabled = $data['enabled'];
+                $CaptchaInstanceObject->Enabled = (bool)$data['enabled'];
 
             if(isset($data['captcha_type']))
                 $CaptchaInstanceObject->CaptchaType = $data['captcha_type'];
@@ -113,10 +120,10 @@
                 $CaptchaInstanceObject->FirewallOptions = FirewallOptions::fromArray($data['firewall_options']);
 
             if(isset($data['last_updated_timestamp']))
-                $CaptchaInstanceObject->LastUpdatedTimestamp = $data['last_updated_timestamp'];
+                $CaptchaInstanceObject->LastUpdatedTimestamp = (int)$data['last_updated_timestamp'];
 
             if(isset($data['created_timestamp']))
-                $CaptchaInstanceObject->CreatedTimestamp = $data['created_timestamp'];
+                $CaptchaInstanceObject->CreatedTimestamp = (int)$data['created_timestamp'];
 
             return $CaptchaInstanceObject;
         }
