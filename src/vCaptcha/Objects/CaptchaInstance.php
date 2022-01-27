@@ -5,6 +5,7 @@
     namespace vCaptcha\Objects;
 
     use vCaptcha\Abstracts\CaptchaType;
+    use vCaptcha\Classes\Security;
     use vCaptcha\Objects\CaptchaInstance\FirewallOptions;
 
     class CaptchaInstance
@@ -71,6 +72,16 @@
          * @var int
          */
         public $CreatedTimestamp;
+
+        /**
+         * Generates a new secret key for this captcha instance
+         *
+         * @return void
+         */
+        public function generateNewSecret()
+        {
+            $this->SecretKey = Security::generateCaptchaInstanceSecret($this->ID, $this->OwnerID);
+        }
 
         /**
          * Returns an array representation of the object
