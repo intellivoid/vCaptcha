@@ -31,6 +31,12 @@
                 "version": "latest",
                 "source": "symfony@composer/uid",
                 "required": true
+            },
+            {
+                "package": "net.intellivoid.khm",
+                "version": "latest",
+                "source": "default@github/intellivoid/khm",
+                "required": true
             }
         ],
         "configuration": {
