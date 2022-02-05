@@ -160,7 +160,7 @@
                 throw new InvalidCaptchaNameException('The given name must not  be greater than 120 characters or less than 3 and must be alphanumeric.');
 
             $captchaInstance->LastUpdatedTimestamp = time();
-            $firewall_options = $captchaInstance->FirewallOptions->toArray()['firewall_options'];
+            $firewall_options = $captchaInstance->FirewallOptions->toArray();
 
             $Query = QueryBuilder::update('instances', [
                 'name' => $this->vcaptcha->getDatabase()->real_escape_string(urlencode($captchaInstance->Name)),
