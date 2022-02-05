@@ -35,10 +35,18 @@
          */
         public $CountryFilterMode;
 
+        /**
+         * Indicates if the server should block requests from host mismatches
+         *
+         * @var bool
+         */
+        public $HostMismatchProtection;
+
         public function __construct()
         {
             $this->DisallowTor = false;
             $this->DisallowAbusiveHosts = true;
+            $this->HostMismatchProtection = true;
             $this->CountryFilterList = [];
             $this->CountryFilterMode = CountryFilterMode::Disabled;
         }
@@ -51,6 +59,7 @@
             return [
                 'disallow_tor' => $this->DisallowTor,
                 'disallow_abusive_hosts' => $this->DisallowAbusiveHosts,
+                'host_mismatch_protection' => $this->HostMismatchProtection,
                 'country_filter_list' => $this->CountryFilterList,
                 'country_filter_mode' => $this->CountryFilterMode
             ];
@@ -71,6 +80,9 @@
 
             if(isset($data['disallow_abusive_hosts']))
                 $FirewallOptionsObject->DisallowAbusiveHosts = (bool)$data['disallow_abusive_hosts'];
+
+            if(isset($data['host_mismatch_protection']))
+                $FirewallOptionsObject->HostMismatchProtection = (bool)$data['host_mismatch_protection'];
 
             if(isset($data['country_filter_list']))
                 $FirewallOptionsObject->CountryFilterList = $data['country_filter_list'];

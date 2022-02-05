@@ -38,4 +38,25 @@
         {
             return hash('crc32', $id) . hash('crc32', $owner_id) . hash('haval128,3', self::pepper($id . $owner_id . time()));
         }
+
+        /**
+         * Generates a random string
+         *
+         * @param int $min_length
+         * @param int $max_length
+         * @param $characters
+         * @return string
+         */
+        public static function generateRandomString(int $min_length=3, int $max_length=5, $characters='ABCDEFGHIJKLMNOPQRSTUVWXYZ'): string
+        {
+            $charactersLength = strlen($characters);
+            $randomString = '';
+
+            for ($i = 0; $i < rand($min_length, $max_length); $i++)
+            {
+                $randomString .= $characters[rand(0, $charactersLength - 1)];
+            }
+
+            return $randomString;
+        }
     }

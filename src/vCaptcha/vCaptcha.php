@@ -9,6 +9,7 @@
     use acm2\Objects\Schema;
     use mysqli;
     use vCaptcha\Managers\CaptchaInstanceManager;
+    use vCaptcha\Managers\CaptchaManager;
 
     class vCaptcha
     {
@@ -33,6 +34,11 @@
         private $CaptchaInstanceManager;
 
         /**
+         * @var CaptchaManager
+         */
+        private $CaptchaManager;
+
+        /**
          * @throws ConfigurationNotDefinedException
          */
         public function __construct()
@@ -52,6 +58,7 @@
 
             $this->DatabaseConfiguration = $this->acm->getConfiguration('Database');
             $this->CaptchaInstanceManager = new CaptchaInstanceManager($this);
+            $this->CaptchaManager = new CaptchaManager($this);
         }
 
         /**
@@ -101,5 +108,13 @@
         public function getCaptchaInstanceManager(): CaptchaInstanceManager
         {
             return $this->CaptchaInstanceManager;
+        }
+
+        /**
+         * @return CaptchaManager
+         */
+        public function getCaptchaManager(): CaptchaManager
+        {
+            return $this->CaptchaManager;
         }
     }

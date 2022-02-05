@@ -47,6 +47,14 @@
         },
         {
             "required": true,
+            "file": "Abstracts/CaptchaStatus.php"
+        },
+        {
+            "required": true,
+            "file": "Abstracts/FailReason.php"
+        },
+        {
+            "required": true,
             "file": "Abstracts/CaptchaType.php"
         },
         {
@@ -63,7 +71,15 @@
         },
         {
             "required": true,
+            "file": "Exceptions/HostRequiredException.php"
+        },
+        {
+            "required": true,
             "file": "Exceptions/DatabaseException.php"
+        },
+        {
+            "required": true,
+            "file": "Exceptions/CaptchaNotFoundException.php"
         },
         {
             "required": true,
@@ -72,6 +88,10 @@
         {
             "required": true,
             "file": "Exceptions/InvalidCaptchaNameException.php"
+        },
+        {
+            "required": true,
+            "file": "Objects/Captcha.php"
         },
         {
             "required": true,
@@ -84,6 +104,10 @@
         {
             "required": true,
             "file": "Objects/CaptchaInstance/FirewallOptions.php"
+        },
+        {
+            "required": true,
+            "file": "Managers/CaptchaManager.php"
         },
         {
             "required": true,
